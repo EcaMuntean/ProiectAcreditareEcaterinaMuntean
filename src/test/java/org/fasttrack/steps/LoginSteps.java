@@ -3,49 +3,43 @@ package org.fasttrack.steps;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
-public class LoginSteps extends BaseSteps {
+
+public class LoginSteps extends BaseSteps{
 
     @Step
-    public void navigateToHomepage() {
+    public void navigateToHomepage(){
         homePage.open();
     }
-
     @Step
-    public void navigateToLoginPage() {
-        homePage.clickAccountLink();
-        homePage.clickLoginLink();
+    public void navigateToLoginPage(){
+        homePage.clickOnAccountLink();
     }
-
     @Step
-    public void setUserEmail(String email) {
-        loginPage.setEmailField(email);
+    public void setUsername(String username){
+        loginPage.setUsernameField(username);
     }
-
     @Step
-    public void setPassword(String password) {
+    public void setPassword(String password){
         loginPage.setPasswordField(password);
     }
-
     @Step
-    public void clickLogin() {
-        loginPage.clickLoginButton();
+    public void clickOnLogin(){
+        loginPage.clickOnLoginButton();
     }
-
     @Step
-    public void verifyUserIsLoggedIn(String userName) {
-        Assert.assertEquals("Hello, " + userName + "!", accountPage.getWelcomeText());
+    public void verifyUserIsLoggedIn(String username){
+        Assert.assertEquals("Hello "+ username +" (not "+ username +"? Log Out)", accountPage.getWelcomeMessage());
     }
-
     @Step
     public void verifyUserNotLoggedIn(){
-        Assert.assertEquals("Invalid login or password.",loginPage.getErrorMessage());
+        Assert.assertEquals("ERROR: Invalid username. Lost your password?", loginPage.getErrorMessage());
+    }
+    @Step
+    public void doLogin(String username, String password){
+        navigateToLoginPage();
+        setUsername(username);
+        setPassword(password);
+        clickOnLogin();
     }
 
-    @Step
-    public void doLogin(String email, String pass){
-        navigateToLoginPage();
-        setUserEmail(email);
-        setPassword(pass);
-        clickLogin();
-    }
 }

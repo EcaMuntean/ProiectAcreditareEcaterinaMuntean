@@ -1,37 +1,29 @@
 package org.fasttrack.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-public class LoginPage extends PageObject {
-
-    @FindBy(id = "email")
-    private WebElementFacade emailField;
-
-    @FindBy(id = "pass")
+public class LoginPage extends BasePage{
+    @FindBy(css = "#username")
+    private WebElementFacade usernameField;
+    @FindBy(css = "#password")
     private WebElementFacade passwordField;
-
-    @FindBy(id = "send2")
+    @FindBy(css = ".form-row button[name=login]")
     private WebElementFacade loginButton;
-
-    @FindBy(css = ".error-msg span")
+    @FindBy(css = ".woocommerce-error li:first-of-type")
     private WebElementFacade errorMessageElement;
 
-    public void setEmailField(String value) {
-        typeInto(emailField, value);
+    public void setUsernameField(String value) {
+        typeInto(usernameField, value);
     }
 
     public void setPasswordField(String value) {
         typeInto(passwordField, value);
     }
-
-    public void clickLoginButton() {
+    public void clickOnLoginButton(){
         clickOn(loginButton);
     }
-
     public String getErrorMessage(){
         return errorMessageElement.getText();
     }
-
 }

@@ -1,15 +1,14 @@
 package org.fasttrack.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-public class AccountPage extends PageObject {
+public class AccountPage extends BasePage{
 
-    @FindBy(css = ".welcome-msg strong")
-    private WebElementFacade welcomeTextElement;
+    @FindBy(css = ".woocommerce-MyAccount-content p:first-of-type")
+    private WebElementFacade welcomeMessage;
 
-    public String getWelcomeText() {
-        return welcomeTextElement.getText();
+    public String getWelcomeMessage() {
+        return welcomeMessage.getText();
     }
 }
