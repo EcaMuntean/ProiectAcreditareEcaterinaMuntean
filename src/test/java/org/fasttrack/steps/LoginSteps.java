@@ -28,7 +28,7 @@ public class LoginSteps extends BaseSteps{
     }
     @Step
     public void verifyUserIsLoggedIn(String username){
-        Assert.assertEquals("Hello "+ username +" (not "+ username +"? Log Out)", accountPage.getWelcomeMessage());
+        Assert.assertEquals("Hello "+ username +" (not "+ username +"? Log out)", accountPage.getWelcomeMessage());
     }
     @Step
     public void verifyUserNotLoggedIn(){

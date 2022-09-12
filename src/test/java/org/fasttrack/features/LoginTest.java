@@ -12,4 +12,13 @@ public class LoginTest extends BaseTest{
         loginSteps.clickOnLogin();
         loginSteps.verifyUserIsLoggedIn("admin");
     }
+
+    @Test
+    public void loginWithInvalidCredentialsTest(){
+        loginSteps.navigateToLoginPage();
+        loginSteps.setUsername("adminn");
+        loginSteps.setPassword("parola111");
+        loginSteps.clickOnLogin();
+        loginSteps.verifyUserNotLoggedIn();
+    }
 }
