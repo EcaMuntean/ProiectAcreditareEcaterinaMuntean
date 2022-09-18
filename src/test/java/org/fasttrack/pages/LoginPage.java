@@ -12,7 +12,8 @@ public class LoginPage extends BasePage{
     private WebElementFacade loginButton;
     @FindBy(css = ".woocommerce-error li:first-of-type")
     private WebElementFacade errorMessageElement;
-
+    @FindBy(css = ".woocommerce-MyAccount-navigation-link:last-of-type")
+    private WebElementFacade logOutLink;
     public void setUsernameField(String value) {
         typeInto(usernameField, value);
     }
@@ -25,5 +26,8 @@ public class LoginPage extends BasePage{
     }
     public String getErrorMessage(){
         return errorMessageElement.getText();
+    }
+    public void clickOnLogOutLink(){
+        clickOn(logOutLink);
     }
 }
