@@ -5,15 +5,14 @@ import org.junit.Test;
 public class CartTest extends BaseTest{
     @Test
     public void addToCart(){
-        cartSteps.clickOnSearchLink();
-        cartSteps.enterSearchWord("Hoodie");
-        cartSteps.clickOnSearchButton();
+        searchSteps.doSearch("Hoodie","HOODIE");
         cartSteps.clickOnProduct();
         cartSteps.clickOnAddToCart();
         cartSteps.validateConfirmationMessageIsPresent();
     }
     @Test
     public void deleteFromCart(){
+        searchSteps.doSearch("Hoodie","HOODIE");
         cartSteps.addProductToCart("Hoodie");
         cartSteps.clickOnShoppingCart();
         cartSteps.deleteFromCart();
@@ -21,6 +20,7 @@ public class CartTest extends BaseTest{
     }
     @Test
     public void updateCartInfo(){
+        searchSteps.doSearch("Hoodie","HOODIE");
         cartSteps.addProductToCart("Hoodie");
         cartSteps.clickOnShoppingCart();
         cartSteps.clickOnQuantityInput();

@@ -21,4 +21,11 @@ public class SearchSteps extends BaseSteps{
     public void validateSearchResult(String searchWord){
         Assert.assertTrue(searchPage.getSearchResult().getText().contains(searchWord));
     }
+    @Step
+    public void doSearch(String searchWord, String searchResult){
+        clickOnSearchLink();
+        enterSearchWord(searchWord);
+        clickOnSearchButton();
+        validateSearchResult(searchResult);
+    }
 }

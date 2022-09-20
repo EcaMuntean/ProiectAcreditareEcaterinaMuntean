@@ -5,18 +5,6 @@ import org.junit.Assert;
 
 public class CartSteps extends BaseSteps{
     @Step
-    public void clickOnSearchLink(){
-        searchPage.clickOnSearchLink();
-    }
-    @Step
-    public void enterSearchWord(String searchWord){
-        searchPage.setSearchInput(searchWord);
-    }
-    @Step
-    public void clickOnSearchButton(){
-        searchPage.clickOnSearchButton();
-    }
-    @Step
     public void clickOnProduct(){
         cartPage.clickOnProduct();
     }
@@ -30,9 +18,6 @@ public class CartSteps extends BaseSteps{
     }
     @Step
     public void addProductToCart(String product){
-        clickOnSearchLink();
-        enterSearchWord(product);
-        clickOnSearchButton();
         clickOnProduct();
         clickOnAddToCart();
         validateConfirmationMessageIsPresent();
@@ -65,5 +50,9 @@ public class CartSteps extends BaseSteps{
     public void validateUpdateCart(int quantity){
         cartPage.getQuantityInput() == quantity;
     }*/
+    @Step
+    public void doAddToCartSteps(String product, int value){
+
+    }
 
 }
