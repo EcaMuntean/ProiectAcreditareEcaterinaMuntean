@@ -24,6 +24,8 @@ public class BaseTest {
     protected CartSteps cartSteps;
     @Steps
     protected CheckOutSteps checkOutSteps;
+    @Steps
+    protected OrdersSteps ordersSteps;
 
     @Before
     public void init(){

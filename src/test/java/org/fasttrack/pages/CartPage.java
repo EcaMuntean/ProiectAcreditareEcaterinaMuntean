@@ -3,6 +3,7 @@ package org.fasttrack.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import java.util.List;
 import java.util.WeakHashMap;
 
 public class CartPage extends BasePage{
@@ -20,6 +21,12 @@ public class CartPage extends BasePage{
     private WebElementFacade quantityInput;
     @FindBy(css = ".button[name='update_cart']")
     private WebElementFacade updateCartButton;
+    @FindBy(css = "tbody .woocommerce-cart-form__cart-item td[data-title = 'Total']")
+    private List<WebElementFacade> totalProductList;
+    @FindBy(css = "tbody  td[data-title = 'Subtotal'] ")
+    private WebElementFacade subtotalCartPrice ;
+
+
 
     public void clickOnProduct(){
         clickOn(product);
@@ -48,5 +55,19 @@ public class CartPage extends BasePage{
     }
     public void clickOnUpdateCartButton(){
         clickOn(updateCartButton);
+    }
+
+    public int getProductsTotal(){
+        int sum = 0;
+        for (WebElementFacade elementFacade:totalProductList){
+            sum+= convertStringToInteger(elementFacade.getText());
+        }
+        return sum;
+
+    }
+    public boolean checkIfSubtotalAndTotalMatches(){
+        int expected = getProductsTotal();
+        int actual = convertStringToInteger(subtotalCartPrice.getText());
+                return expected == actual;
     }
 }

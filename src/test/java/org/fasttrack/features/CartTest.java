@@ -28,4 +28,16 @@ public class CartTest extends BaseTest{
         cartSteps.clickOnUpdateCartButton();
         //cartSteps.validateUpdateCart(5);
     }
+    @Test
+    public void checkSubtotalAndTotalPrice(){
+        searchSteps.doSearch("Hoodie","HOODIE");
+        cartSteps.addProductToCart("Hoodie");
+        cartSteps.clickOnShoppingCart();
+        cartSteps.clickOnQuantityInput();
+        cartSteps.modifyQuantityOnCart(5);
+        cartSteps.clickOnUpdateCartButton();
+        cartSteps.checkSubtotalAndTotalPrice();
+    }
+
+
 }

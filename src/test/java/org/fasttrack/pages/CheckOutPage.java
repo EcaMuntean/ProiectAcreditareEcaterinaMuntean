@@ -24,6 +24,10 @@ public class CheckOutPage extends BasePage{
     private WebElementFacade successMessage;
     @FindBy(css=".checkout-button")
     private WebElementFacade checkOutButton;
+    @FindBy(css = ".woocommerce-error li")
+    private WebElementFacade errorMessage;
+    @FindBy(css = ".woocommerce-order-overview__order strong")
+    private WebElementFacade orderNumber;
 
     public void clickOnCheckOutButton(){
         clickOn(checkOutButton);
@@ -45,7 +49,15 @@ public class CheckOutPage extends BasePage{
         clickOn(placeOrder);
     }
 
-    public String getSuccessMessage() {return successMessage.getText();}
-
+    public String getSuccessMessage() {
+        return successMessage.getText();
     }
+    public String getErrorMessage() {
+        return errorMessage.getText();
+    }
+    public WebElementFacade getOrderNumber(){
+        return orderNumber;
+    }
+
+}
 

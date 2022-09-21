@@ -51,8 +51,9 @@ public class CartSteps extends BaseSteps{
         cartPage.getQuantityInput() == quantity;
     }*/
     @Step
-    public void doAddToCartSteps(String product, int value){
-
+    public void checkSubtotalAndTotalPrice(){
+        Assert.assertTrue(cartPage.checkIfSubtotalAndTotalMatches());
     }
+
 
 }

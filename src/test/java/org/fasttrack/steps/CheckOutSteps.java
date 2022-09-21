@@ -37,9 +37,15 @@ public class CheckOutSteps extends BaseSteps{
         waitABit(3000);
         Assert.assertEquals("ORDER RECEIVED", checkOutPage.getSuccessMessage());
     }
-
-
-
+    @Step
+    public void verifyEmailIsInvalid(){
+        Assert.assertEquals("Billing Email address is not a valid email address.",checkOutPage.getErrorMessage());
     }
+    @Step
+    public void verifyPhoneNumberIsInvalid(){
+        Assert.assertEquals("Billing Phone is not a valid phone number.",checkOutPage.getErrorMessage());
+    }
+
+}
 
 
