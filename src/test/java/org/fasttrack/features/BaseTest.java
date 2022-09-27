@@ -26,6 +26,8 @@ public class BaseTest {
     protected CheckOutSteps checkOutSteps;
     @Steps
     protected OrdersSteps ordersSteps;
+    @Steps
+    protected AddressesSteps addressesSteps;
 
     @Before
     public void init(){

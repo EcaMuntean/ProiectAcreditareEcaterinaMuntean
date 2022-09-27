@@ -11,6 +11,8 @@ public class AccountPage extends BasePage{
     private WebElementFacade ordersLink;
     @FindBy(css = "tr:first-of-type .woocommerce-orders-table__cell-order-number a")
     private WebElementFacade firstOrderNumber;
+    @FindBy(css = ".woocommerce-MyAccount-navigation-link--edit-address a")
+    private WebElementFacade addressesLink;
 
     public String getWelcomeMessage() {
         return welcomeMessage.getText();
@@ -23,5 +25,8 @@ public class AccountPage extends BasePage{
     }
     public WebElementFacade getFirstOrderNumber() {
         return firstOrderNumber;
+    }
+    public void clickOnAddressesLink(){
+        clickOn(addressesLink);
     }
 }
