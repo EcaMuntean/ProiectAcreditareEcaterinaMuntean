@@ -54,6 +54,23 @@ public class CartSteps extends BaseSteps{
     public void checkSubtotalAndTotalPrice(){
         Assert.assertTrue(cartPage.checkIfSubtotalAndTotalMatches());
     }
+    @Step
+    public void setCouponInput(String value){
+        cartPage.setCouponCodeInput(value);
+    }
+    @Step
+    public void clickOnApplyCoupon(){
+        cartPage.clickOnApplyCoupon();
+    }
+    @Step
+    public void validateSuccessMessage(){
+        Assert.assertEquals("Coupon code applied successfully.",cartPage.getSuccessMessage());
+    }
+    @Step
+    public void validateCouponIsApplied(String couponValue){
+        int intValue = Integer.parseInt(couponValue);
+        Assert.assertEquals(intValue,cartPage.getCouponValue());
+    }
 
 
 }

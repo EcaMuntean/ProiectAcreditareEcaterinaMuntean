@@ -11,7 +11,7 @@ public class RegisterTest extends BaseTest{
         registerSteps.setEmail(Constants.USER_EMAIL);
         registerSteps.setPassword(Constants.USER_PASS);
         registerSteps.clickOnRegister();
-        registerSteps.verifyUserIsRegistered("muntean1234");
+        registerSteps.verifyUserIsRegistered(Constants.USER_USERNAME);
     }
     @Test
     public void registerWithWeakPassword(){

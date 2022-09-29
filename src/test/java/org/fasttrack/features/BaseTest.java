@@ -27,7 +27,9 @@ public class BaseTest {
     @Steps
     protected OrdersSteps ordersSteps;
     @Steps
-    protected AddressesSteps addressesSteps;
+    protected ChangePasswordSteps changePasswordSteps;
+    @Steps
+    protected CouponSteps couponSteps;
 
     @Before
     public void init(){

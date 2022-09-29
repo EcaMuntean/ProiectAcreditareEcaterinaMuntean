@@ -25,6 +25,14 @@ public class CartPage extends BasePage{
     private List<WebElementFacade> totalProductList;
     @FindBy(css = "tbody  td[data-title = 'Subtotal'] ")
     private WebElementFacade subtotalCartPrice ;
+    @FindBy(css = "#coupon_code")
+    private WebElementFacade couponCodeInput;
+    @FindBy(css = ".button[name = 'apply_coupon']")
+    private WebElementFacade applyCouponButton;
+    @FindBy(css = ".woocommerce-message")
+    private WebElementFacade successMessage;
+    @FindBy(css = ".cart-discount .woocommerce-Price-amount")
+    private WebElementFacade couponValue;
 
 
 
@@ -70,4 +78,18 @@ public class CartPage extends BasePage{
         int actual = convertStringToInteger(subtotalCartPrice.getText());
                 return expected == actual;
     }
+    public void setCouponCodeInput(String value){
+        typeInto(couponCodeInput,value);
+    }
+    public void clickOnApplyCoupon(){
+        clickOn(applyCouponButton);
+    }
+    public String getSuccessMessage(){
+        return successMessage.getText();
+    }
+    public int getCouponValue(){
+        int amount = convertStringToIntegerWithoutZeros(couponValue.getText());
+        return amount;
+    }
+
 }

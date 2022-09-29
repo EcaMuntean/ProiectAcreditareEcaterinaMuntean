@@ -54,7 +54,7 @@ public class LoginSteps extends BaseSteps{
     }
     @Step
     public boolean verifyUserIsLoggedOut(){
-       return accountPage.isNotPresentWelcomeMessage();
+        return accountPage.isNotPresentWelcomeMessage();
     }
 
 

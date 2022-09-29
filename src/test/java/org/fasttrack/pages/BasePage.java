@@ -12,5 +12,12 @@ public class BasePage extends PageObject {
 
 
     }
+    public int convertStringToIntegerWithoutZeros(String element){
+        return Integer.parseInt(element
+                .replaceAll(" lei", "")
+                .replaceAll(",00","")) ;
+
+
+    }
 
 }

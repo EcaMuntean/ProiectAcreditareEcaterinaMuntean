@@ -35,4 +35,12 @@ public class RegisterSteps extends BaseSteps{
         Assert.assertEquals("Very weak - Please enter a stronger password.", registerPage.getWeakPassword());
 
     }
+    @Step
+    public void doRegister(String email, String password, String username){
+        navigateToRegisterPage();
+        setEmail(email);
+        setPassword(password);
+        clickOnRegister();
+        verifyUserIsRegistered(username);
+    }
 }
