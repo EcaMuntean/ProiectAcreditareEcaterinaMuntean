@@ -36,6 +36,10 @@ public class RegisterSteps extends BaseSteps{
 
     }
     @Step
+    public void verifySameEmailError(){
+        Assert.assertEquals("Error: An account is already registered with your email address. Please log in.", registerPage.getSameEmailError());
+    }
+    @Step
     public void doRegister(String email, String password, String username){
         navigateToRegisterPage();
         setEmail(email);

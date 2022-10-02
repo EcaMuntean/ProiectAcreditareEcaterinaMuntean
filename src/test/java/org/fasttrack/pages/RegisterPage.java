@@ -13,6 +13,8 @@ public class RegisterPage extends BasePage{
     private WebElementFacade registerButton;
     @FindBy(css = ".woocommerce-password-strength")
     private WebElementFacade weakPassword;
+    @FindBy(css = ".woocommerce-error li")
+    private WebElementFacade sameEmailError;
 
     public void setRegisterEmailField(String value) {
         typeInto(registerEmailField, value);
@@ -25,6 +27,9 @@ public class RegisterPage extends BasePage{
     }
     public String getWeakPassword(){
         return weakPassword.getText();
+    }
+    public String getSameEmailError(){
+        return sameEmailError.getText();
     }
 
 

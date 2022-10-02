@@ -20,5 +20,13 @@ public class RegisterTest extends BaseTest{
         registerSteps.setPassword("Mun");
         registerSteps.verifyWeakPasswordMessage();
     }
+    @Test
+    public void registerWithTheSameEmail(){
+        registerSteps.navigateToRegisterPage();
+        registerSteps.setEmail(Constants.USER_EMAIL);
+        registerSteps.setPassword(Constants.USER_PASS);
+        registerSteps.clickOnRegister();
+        registerSteps.verifySameEmailError();
+    }
 
 }
