@@ -26,7 +26,6 @@ public class CartTest extends BaseTest{
         cartSteps.clickOnQuantityInput();
         cartSteps.modifyQuantityOnCart(5);
         cartSteps.clickOnUpdateCartButton();
-        //cartSteps.validateUpdateCart(5);
     }
     @Test
     public void checkSubtotalAndTotalPrice(){

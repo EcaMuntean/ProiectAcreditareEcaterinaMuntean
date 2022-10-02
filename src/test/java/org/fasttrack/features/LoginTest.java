@@ -32,10 +32,7 @@ public class LoginTest extends BaseTest{
     }
     @Test
     public void logOutTest(){
-        loginSteps.navigateToLoginPage();
-        loginSteps.setUsername(Constants.ADMIN_USERNAME);
-        loginSteps.setPassword(Constants.ADMIN_PASS);
-        loginSteps.clickOnLogin();
+        loginSteps.doLogin(Constants.ADMIN_USERNAME,Constants.ADMIN_PASS);
         loginSteps.verifyUserIsLoggedIn(Constants.ADMIN_USERNAME);
         loginSteps.clickOnLogOut();
         loginSteps.verifyUserIsLoggedOut();

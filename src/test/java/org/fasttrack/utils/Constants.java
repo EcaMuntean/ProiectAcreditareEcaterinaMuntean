@@ -1,7 +1,7 @@
 package org.fasttrack.utils;
 
 public class Constants {
-    public static final String USER_EMAIL = "muntean12345@eca.com"  ;
+    public static final String USER_EMAIL = "muntean1234@eca.com"  ;
     public static final String USER_PASS ="Muntean2022";
     public static final String USER_USERNAME = "muntean1234";
     public static final String ADMIN_USERNAME = "admin"  ;
