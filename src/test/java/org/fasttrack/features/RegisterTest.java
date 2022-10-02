@@ -6,7 +6,7 @@ import org.junit.Test;
 public class RegisterTest extends BaseTest{
 
     @Test
-    public void registerWithValidEmail(){
+    public void registerWithAValidEmail(){
         registerSteps.navigateToRegisterPage();
         registerSteps.setEmail(Constants.USER_EMAIL);
         registerSteps.setPassword(Constants.USER_PASS);
